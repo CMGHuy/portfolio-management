@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  db:
+    container_name: db
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: cmghuy
+      POSTGRES_PASSWORD: cmghuy
+      POSTGRES_DB: portfolio
+    volumes:
+      - db:/var/lib/postgresql/data
+    ports:
+      - "15432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "cmghuy"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db:
