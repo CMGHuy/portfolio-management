@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: portfolio-management
+  datasource:
+    username: cmghuy
+    password: cmghuy
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:15432/portfolio
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8123
+
